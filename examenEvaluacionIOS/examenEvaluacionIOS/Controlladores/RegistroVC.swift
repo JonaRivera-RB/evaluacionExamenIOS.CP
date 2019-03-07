@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 import FirebaseStorage
+import CommonCrypto
 
 
 class RegistroVC: UIViewController {
@@ -64,7 +65,7 @@ class RegistroVC: UIViewController {
     func registrarUsuario(paraCorreo correo:String, paraContra contra:String, alerta:UIAlertController,creacionUsuarioCompleta: @escaping
         (_ status:Bool, _ error:Error?) ->() ) {
         
-        Auth.auth().createUser(withEmail: correo, password: contra) { (usuario, error) in
+        Auth.auth().createUser(withEmail: correo, password: self.md5(contra)) { (usuario, error) in
             guard let usuario = usuario else {
                 creacionUsuarioCompleta(false, error)
                 alerta.dismiss(animated: true, completion: {
@@ -81,7 +82,7 @@ class RegistroVC: UIViewController {
                 if error == nil
                 {
                     print("cargo la imagen")
-                    LoginServicio.instancia.iniciarSesion(paraCorreo: correo, paraContra: contra, loginCompleta: { (exito, nil) in
+                    LoginServicio.instancia.iniciarSesion(paraCorreo: correo, paraContra: self.md5(contra), loginCompleta: { (exito, nil) in
                         alerta.dismiss(animated: true, completion: {
                             let inicioVC = self.storyboard?.instantiateViewController(withIdentifier: "InicioVC")
                             self.present(inicioVC!, animated: true, completion: nil)
@@ -106,7 +107,7 @@ class RegistroVC: UIViewController {
             })
             let datosUsuario = ["nombre": self.nombreTxt.text!,
                                 "email": usuario.user.email,
-                            "contraseña": self.contraTxt.text!,
+                            "contraseña": self.md5(self.contraTxt.text!),
                             "id": usuario.user.uid,
                             "foto":String(describing:directorio)]
             
@@ -126,6 +127,22 @@ class RegistroVC: UIViewController {
         let email = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
         let correoTest = NSPredicate(format:"SELF MATCHES %@", email)
         return correoTest.evaluate(with: string)
+    }
+    
+    func md5(_ string: String) -> String {
+        
+        let context = UnsafeMutablePointer<CC_MD5_CTX>.allocate(capacity: 1)
+        var digest = Array<UInt8>(repeating:0, count:Int(CC_MD5_DIGEST_LENGTH))
+        CC_MD5_Init(context)
+        CC_MD5_Update(context, string, CC_LONG(string.lengthOfBytes(using: String.Encoding.utf8)))
+        CC_MD5_Final(&digest, context)
+        context.deallocate(capacity: 1)
+        var hexString = ""
+        for byte in digest {
+            hexString += String(format:"%02x", byte)
+        }
+        
+        return hexString
     }
     
     func mostrarAlerta(paraTitulo titulo: String,paraString string:String) {
