@@ -46,17 +46,9 @@ class LoginVC: UIViewController, UIGestureRecognizerDelegate, GIDSignInUIDelegat
         self.view.endEditing(true)
     }
     @IBAction func iniciarSesionBtnAccion(_ sender: Any) {
-        if correoTxt.text != nil &&  contraTxt.text != nil {
+        if correoTxt.text != "" && contraTxt.text != "" {
             
-            let alertaCargando = UIAlertController(title: nil, message: "Validando datos...", preferredStyle: .alert)
-    
-            let cargandoIndicador = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
-            cargandoIndicador.hidesWhenStopped = true
-            cargandoIndicador.style = UIActivityIndicatorView.Style.gray
-            cargandoIndicador.startAnimating();
-            
-            alertaCargando.view.addSubview(cargandoIndicador)
-            present(alertaCargando, animated: true, completion: nil)
+            let alertaCargando = mostrarAlertCargando()
             
             LoginServicio.instancia.iniciarSesion(paraCorreo:  correoTxt.text!, paraContra: contraTxt.text!) { (exito, loginError) in
                 if exito {
@@ -72,6 +64,20 @@ class LoginVC: UIViewController, UIGestureRecognizerDelegate, GIDSignInUIDelegat
                 }
             }
         }
+    }
+    func mostrarAlertCargando () -> UIAlertController{
+        
+        let alertaCargando = UIAlertController(title: nil, message: "Validando datos...", preferredStyle: .alert)
+        
+        let cargandoIndicador = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+        cargandoIndicador.hidesWhenStopped = true
+        cargandoIndicador.style = UIActivityIndicatorView.Style.gray
+        cargandoIndicador.startAnimating();
+        
+        alertaCargando.view.addSubview(cargandoIndicador)
+        present(alertaCargando, animated: true, completion: nil)
+        
+        return alertaCargando
     }
     
     func mostrarAlerta(paraTitulo titulo: String,paraString string:String) {
@@ -91,6 +97,7 @@ class LoginVC: UIViewController, UIGestureRecognizerDelegate, GIDSignInUIDelegat
             print("Fallo logeo con google: ",err)
             return
         }
+         let alertaCargando = mostrarAlertCargando()
         
         guard let idToken = user.authentication.idToken else {return}
         guard let accessToken = user.authentication.accessToken else {return}
@@ -138,12 +145,15 @@ class LoginVC: UIViewController, UIGestureRecognizerDelegate, GIDSignInUIDelegat
                         }
                         if let error = error?.localizedDescription {
                             print("error de firebase",error)
+                            alertaCargando.dismiss(animated: true, completion: nil)
                         }
                         else {
+                            alertaCargando.dismiss(animated: true, completion: nil)
                             print("error de codigo")
                         }
                     })
                 }
+                alertaCargando.dismiss(animated: true, completion: nil)
                 let inicioVC = self.storyboard?.instantiateViewController(withIdentifier: "InicioVC")
                 self.present(inicioVC!, animated: true, completion: nil)
             })

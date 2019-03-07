@@ -31,7 +31,6 @@ class PerfilVC: UIViewController {
             let urlFoto = value?["foto"] as? String
             let user = MisDatos(nombre: nombre!, foto: urlFoto!)
             self.miCorreoLbl.text = user.nombre
-            // self.meCorreoLbl.text = username
             if urlFoto?.isEmpty == false {
                 Storage.storage().reference(forURL: urlFoto!).getData(maxSize: 10 * 1024 * 1024, completion: { (data, error) in
                     if let error = error?.localizedDescription {

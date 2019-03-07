@@ -36,29 +36,40 @@ class RegistroVC: UIViewController {
     
     @IBAction func crearCuentaBtnAccin(_ sender: Any) {
         //crear funciones para validar los datos
-        if nombreTxt.text != nil &&  correoTxt.text != nil && contraTxt.text != nil {
+        //defaultProfileImage
+        if nombreTxt.text != "" &&  correoTxt.text != "" && contraTxt.text != "" && imagenPerfil.image != UIImage(named:"defaultProfileImage") {
             if validadContra(in: contraTxt.text!) {
-                
-                registrarUsuario(paraCorreo: self.correoTxt.text!, paraContra: self.contraTxt.text!) { (exito, errorRegistro) in
-                    if exito {
-                        print("Registrado exitosamente")
-                    } else {
-                        print(String(describing: errorRegistro?.localizedDescription))
+                if validarCorreo(string: correoTxt.text!) {
+                    let alertaCargando = mostrarAlertCargando()
+                    registrarUsuario(paraCorreo: self.correoTxt.text!, paraContra: self.contraTxt.text!, alerta: alertaCargando) { (exito, errorRegistro) in
+                        if exito {
+                            print("Registrado exitosamente 1")
+                        } else {
+                            print(String(describing: errorRegistro?.localizedDescription))
+                        }
                     }
-                }
+                }else {
+                mostrarAlerta(paraTitulo: "Error", paraString: "El correo electronico no es valido.")
             }
+        }
             else {
                 mostrarAlerta(paraTitulo: "Error", paraString: "La contraseña no cuenta con los datos correctos: \n 1 mayuscula \n 1 minuscula \n 1 numero \n 1 caracter especial.")
             }
+        }else {
+            
+            mostrarAlerta(paraTitulo: "Error", paraString: "Llene todos los campos requeridos, incluyendo una fotografia.")
         }
     }
     
-    func registrarUsuario(paraCorreo correo:String, paraContra contra:String, creacionUsuarioCompleta: @escaping
+    func registrarUsuario(paraCorreo correo:String, paraContra contra:String, alerta:UIAlertController,creacionUsuarioCompleta: @escaping
         (_ status:Bool, _ error:Error?) ->() ) {
         
         Auth.auth().createUser(withEmail: correo, password: contra) { (usuario, error) in
             guard let usuario = usuario else {
                 creacionUsuarioCompleta(false, error)
+                alerta.dismiss(animated: true, completion: {
+                    self.mostrarAlerta(paraTitulo: "Error", paraString: ((error?.localizedDescription)!))
+                })
                 return
             }
             let storage = Storage.storage().reference()
@@ -71,20 +82,26 @@ class RegistroVC: UIViewController {
                 {
                     print("cargo la imagen")
                     LoginServicio.instancia.iniciarSesion(paraCorreo: correo, paraContra: contra, loginCompleta: { (exito, nil) in
-                        let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "loginVista")
-                        //inicioVC
-                        self.present(loginVC!, animated: true, completion: nil)
-                        print("registrado exitosamente")
+                        alerta.dismiss(animated: true, completion: {
+                            let inicioVC = self.storyboard?.instantiateViewController(withIdentifier: "InicioVC")
+                            self.present(inicioVC!, animated: true, completion: nil)
+                            print("registrado exitosamente 2")
+                        })
                     })
                 }
                 else
                 {
-                    if let error = error?.localizedDescription {
-                        print("error de firebase",error)
-                    }
-                    else {
-                        print("error de codigo")
-                    }
+                    
+                    alerta.dismiss(animated: true, completion: {
+                        if let error = error?.localizedDescription {
+                            print("error de firebase",error)
+                            self.mostrarAlerta(paraTitulo: "Error", paraString: (error))
+                        }
+                        else {
+                            print("error de codigo")
+                        }
+                        self.mostrarAlerta(paraTitulo: "Error", paraString: "Error")
+                    })
                 }
             })
             let datosUsuario = ["nombre": self.nombreTxt.text!,
@@ -105,12 +122,31 @@ class RegistroVC: UIViewController {
         
         return NSPredicate(format: "SELF MATCHES %@", passwordRegex).evaluate(with: text)
     }
+     func validarCorreo(string: String) -> Bool {
+        let email = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        let correoTest = NSPredicate(format:"SELF MATCHES %@", email)
+        return correoTest.evaluate(with: string)
+    }
     
     func mostrarAlerta(paraTitulo titulo: String,paraString string:String) {
         let alerta = UIAlertController(title: titulo, message: string, preferredStyle: .alert)
         let accion = UIAlertAction(title: "ok", style: .default, handler: nil)
         alerta.addAction(accion)
         present(alerta, animated: true, completion: nil)
+    }
+    func mostrarAlertCargando () -> UIAlertController{
+        
+        let alertaCargando = UIAlertController(title: nil, message: "Creando cuenta...", preferredStyle: .alert)
+        
+        let cargandoIndicador = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+        cargandoIndicador.hidesWhenStopped = true
+        cargandoIndicador.style = UIActivityIndicatorView.Style.gray
+        cargandoIndicador.startAnimating();
+        
+        alertaCargando.view.addSubview(cargandoIndicador)
+        present(alertaCargando, animated: true, completion: nil)
+        
+        return alertaCargando
     }
     
     @IBAction func cerrarVistaBtnAccion(_ sender: Any) {

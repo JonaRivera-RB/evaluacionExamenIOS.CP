@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseStorage
+import  GoogleSignIn
 
 class visitasVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        try! Auth.auth().signOut()
+        GIDSignIn.sharedInstance().signOut()
         // Do any additional setup after loading the view.
     }
     
