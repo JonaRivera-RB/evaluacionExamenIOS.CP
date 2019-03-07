@@ -11,15 +11,13 @@ import GoogleSignIn
 import Firebase
 
 class LoginVC: UIViewController, UIGestureRecognizerDelegate, GIDSignInUIDelegate, GIDSignInDelegate {
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        print("hello")
-    }
     
     
     @IBOutlet weak var correoTxt: DetectarTextoTextField!
     @IBOutlet weak var contraTxt: DetectarTextoTextField!
     
     
+    var imagen:UIImage!
     override func viewDidLoad() {
         super.viewDidLoad()
         GIDSignIn.sharedInstance().delegate = self
@@ -49,8 +47,9 @@ class LoginVC: UIViewController, UIGestureRecognizerDelegate, GIDSignInUIDelegat
     }
     @IBAction func iniciarSesionBtnAccion(_ sender: Any) {
         if correoTxt.text != nil &&  contraTxt.text != nil {
-            let alertaCargando = UIAlertController(title: nil, message: "Validando datos...", preferredStyle: .alert)
             
+            let alertaCargando = UIAlertController(title: nil, message: "Validando datos...", preferredStyle: .alert)
+    
             let cargandoIndicador = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
             cargandoIndicador.hidesWhenStopped = true
             cargandoIndicador.style = UIActivityIndicatorView.Style.gray
@@ -74,6 +73,7 @@ class LoginVC: UIViewController, UIGestureRecognizerDelegate, GIDSignInUIDelegat
             }
         }
     }
+    
     func mostrarAlerta(paraTitulo titulo: String,paraString string:String) {
         let alerta = UIAlertController(title: titulo, message: string, preferredStyle: .alert)
         let accion = UIAlertAction(title: "ok", style: .default, handler: nil)
@@ -85,16 +85,72 @@ class LoginVC: UIViewController, UIGestureRecognizerDelegate, GIDSignInUIDelegat
        // let createdAccountVC = storyboard?.instantiateViewController(withIdentifier: "createdAccountVC")
        // present(createdAccountVC!, animated: true, completion: nil)
     }
-    
-    
-    //iniciar sesion con google
-   /* func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if let err = error{
-            print("Fallo el login con Google: ",err)
+            print("Fallo logeo con google: ",err)
             return
         }
+        
+        guard let idToken = user.authentication.idToken else {return}
+        guard let accessToken = user.authentication.accessToken else {return}
+        guard let imagenGoogle = user.profile.imageURL(withDimension: 400) else {return}
+        let url = imagenGoogle
+        
+        if let dataa = try? Data(contentsOf: url)
+        {
+            imagen = UIImage(data: dataa)!
+        }
+        let credentials = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: accessToken)
+        
+        Auth.auth().signInAndRetrieveData(with: credentials) { (user, error) in
+            if let erro = error{
+                print("error",erro)
+                return
+            }
+            guard let uid = user?.user.uid else {return}
+            
+            Servicios.instancia.REF_USUARIOS.child((user?.user.uid)!).observeSingleEvent(of: .value, with: { (snaps) in
+                let snaps = snaps.value as? NSDictionary
+                if(snaps == nil)
+                {
+                    // let imagenString  = String(describing:self.image)
+                    let storage = Storage.storage().reference()
+                    let nombreImagen = UUID()
+                    let directorio = storage.child("imagenesUsuarios/\(nombreImagen)")
+                    let metaDatos = StorageMetadata()
+                    metaDatos.contentType = "image/png"
+                    directorio.putData(self.imagen.pngData()!, metadata: metaDatos, completion: { (data, error) in
+                        if error == nil
+                        {
+                            Servicios.instancia.REF_USUARIOS.child((user?.user.uid)!).child("nombre").setValue(user?.user.displayName)
+                            Servicios.instancia.REF_USUARIOS.child((user?.user.uid)!).child("email").setValue(user?.user.email)
+                            Servicios.instancia.REF_USUARIOS.child((user?.user.uid)!).child("foto").setValue(String(describing: self.imagen))
+                            
+                            let datosUsuario = ["nombre": user?.user.displayName,
+                                            "email": user?.user.email,
+                                            "id": user?.user.uid,
+                                            "foto":String(describing:directorio)]
+                            
+                            
+                            Servicios.instancia.crearUsuarioDB(uid: user!.user.uid, datosUsuario: datosUsuario as Any as! Dictionary<String, Any>)
+                            
+                        }
+                        if let error = error?.localizedDescription {
+                            print("error de firebase",error)
+                        }
+                        else {
+                            print("error de codigo")
+                        }
+                    })
+                }
+                let inicioVC = self.storyboard?.instantiateViewController(withIdentifier: "InicioVC")
+                self.present(inicioVC!, animated: true, completion: nil)
+            })
+            print("Logeado con exito en firebase con google",uid)
+        }
+        print("Logeado con exito en firebase con google",user)
     }
-*/
     
 }
 

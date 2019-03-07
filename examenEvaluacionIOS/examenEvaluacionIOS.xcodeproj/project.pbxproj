@@ -11,6 +11,9 @@
 		131BCD02222F8A95005BB6D8 /* LoginServicio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131BCD01222F8A95005BB6D8 /* LoginServicio.swift */; };
 		1328D65E222F7FFE0049B72E /* Servicios.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1328D65D222F7FFE0049B72E /* Servicios.swift */; };
 		1372432C22307B1300F18768 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1372432B22307B1300F18768 /* GoogleService-Info.plist */; };
+		13B317812230AFF0006FE428 /* visitasVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B317802230AFF0006FE428 /* visitasVC.swift */; };
+		13B317832230B005006FE428 /* PerfilVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B317822230B005006FE428 /* PerfilVC.swift */; };
+		13B317852230B19F006FE428 /* MisDatos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B317842230B19F006FE428 /* MisDatos.swift */; };
 		13DA1410222F5EF600C94CC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DA140F222F5EF600C94CC4 /* AppDelegate.swift */; };
 		13DA1412222F5EF600C94CC4 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DA1411222F5EF600C94CC4 /* LoginVC.swift */; };
 		13DA1415222F5EF600C94CC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13DA1413222F5EF600C94CC4 /* Main.storyboard */; };
@@ -24,6 +27,9 @@
 		131BCD01222F8A95005BB6D8 /* LoginServicio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginServicio.swift; sourceTree = "<group>"; };
 		1328D65D222F7FFE0049B72E /* Servicios.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Servicios.swift; sourceTree = "<group>"; };
 		1372432B22307B1300F18768 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		13B317802230AFF0006FE428 /* visitasVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = visitasVC.swift; sourceTree = "<group>"; };
+		13B317822230B005006FE428 /* PerfilVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilVC.swift; sourceTree = "<group>"; };
+		13B317842230B19F006FE428 /* MisDatos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MisDatos.swift; sourceTree = "<group>"; };
 		13DA140C222F5EF600C94CC4 /* examenEvaluacionIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = examenEvaluacionIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13DA140F222F5EF600C94CC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13DA1411222F5EF600C94CC4 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -100,6 +106,8 @@
 			children = (
 				13DA1411222F5EF600C94CC4 /* LoginVC.swift */,
 				13EDDED1223028950032DE01 /* RegistroVC.swift */,
+				13B317802230AFF0006FE428 /* visitasVC.swift */,
+				13B317822230B005006FE428 /* PerfilVC.swift */,
 			);
 			path = Controlladores;
 			sourceTree = "<group>";
@@ -107,6 +115,7 @@
 		13DA1425222F622700C94CC4 /* Modelos */ = {
 			isa = PBXGroup;
 			children = (
+				13B317842230B19F006FE428 /* MisDatos.swift */,
 			);
 			path = Modelos;
 			sourceTree = "<group>";
@@ -296,8 +305,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				13DA1412222F5EF600C94CC4 /* LoginVC.swift in Sources */,
+				13B317812230AFF0006FE428 /* visitasVC.swift in Sources */,
 				1328D65E222F7FFE0049B72E /* Servicios.swift in Sources */,
 				131BCD02222F8A95005BB6D8 /* LoginServicio.swift in Sources */,
+				13B317832230B005006FE428 /* PerfilVC.swift in Sources */,
+				13B317852230B19F006FE428 /* MisDatos.swift in Sources */,
 				13EDDED2223028950032DE01 /* RegistroVC.swift in Sources */,
 				13DA1410222F5EF600C94CC4 /* AppDelegate.swift in Sources */,
 				13DA1429222F67A100C94CC4 /* DetectarTextoTextField.swift in Sources */,
