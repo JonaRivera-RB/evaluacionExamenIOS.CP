@@ -30,7 +30,7 @@ class LoginVC: UIViewController, UIGestureRecognizerDelegate, GIDSignInUIDelegat
     }
     func ocultarTeclado() {
         self.view.isUserInteractionEnabled = true
-        let toque = UITapGestureRecognizer(target: self, action: #selector(LoginVC.dismissKeyboard))
+        let toque = UITapGestureRecognizer(target: self, action: #selector(LoginVC.tecladoOculto))
         toque.delegate = self
         toque.cancelsTouchesInView = false
         self.view.addGestureRecognizer(toque)
@@ -44,15 +44,48 @@ class LoginVC: UIViewController, UIGestureRecognizerDelegate, GIDSignInUIDelegat
     }
     
     
-    @objc func dismissKeyboard() {
+    @objc func tecladoOculto() {
         self.view.endEditing(true)
     }
+    @IBAction func iniciarSesionBtnAccion(_ sender: Any) {
+        if correoTxt.text != nil &&  contraTxt.text != nil {
+            let alertaCargando = UIAlertController(title: nil, message: "Validando datos...", preferredStyle: .alert)
+            
+            let cargandoIndicador = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+            cargandoIndicador.hidesWhenStopped = true
+            cargandoIndicador.style = UIActivityIndicatorView.Style.gray
+            cargandoIndicador.startAnimating();
+            
+            alertaCargando.view.addSubview(cargandoIndicador)
+            present(alertaCargando, animated: true, completion: nil)
+            
+            LoginServicio.instancia.iniciarSesion(paraCorreo:  correoTxt.text!, paraContra: contraTxt.text!) { (exito, loginError) in
+                if exito {
+                    alertaCargando.dismiss(animated: true, completion: nil)
+                    let inicioVC = self.storyboard?.instantiateViewController(withIdentifier: "InicioVC")
+                    self.present(inicioVC!, animated: true, completion: nil)
+                } else {
+                    alertaCargando.dismiss(animated: true, completion: nil)
+                    self.mostrarAlerta(paraTitulo: "Error", paraString: (loginError?.localizedDescription)!)
+                    print(String(describing: loginError?.localizedDescription))
+                    self.correoTxt.text = ""
+                    self.contraTxt.text = ""
+                }
+            }
+        }
+    }
+    func mostrarAlerta(paraTitulo titulo: String,paraString string:String) {
+        let alerta = UIAlertController(title: titulo, message: string, preferredStyle: .alert)
+        let accion = UIAlertAction(title: "ok", style: .default, handler: nil)
+        alerta.addAction(accion)
+        present(alerta, animated: true, completion: nil)
+    }
     
-    //accion para abrir la vista de crear cuenta
     @IBAction func crearCuentaBtnAccion(_ sender: Any) {
        // let createdAccountVC = storyboard?.instantiateViewController(withIdentifier: "createdAccountVC")
        // present(createdAccountVC!, animated: true, completion: nil)
     }
+    
     
     //iniciar sesion con google
    /* func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {

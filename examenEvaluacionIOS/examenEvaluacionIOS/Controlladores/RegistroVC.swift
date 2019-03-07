@@ -70,7 +70,7 @@ class RegistroVC: UIViewController {
                 if error == nil
                 {
                     print("cargo la imagen")
-                    LoginServicio.instancia.iniciarSesion(paraCorreo: correo, paraContra: contra, creacionUsuarioCompleta: { (exito, nil) in
+                    LoginServicio.instancia.iniciarSesion(paraCorreo: correo, paraContra: contra, loginCompleta: { (exito, nil) in
                         let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "loginVista")
                         //inicioVC
                         self.present(loginVC!, animated: true, completion: nil)

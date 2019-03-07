@@ -74,7 +74,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Contraseña:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6rk-hq-Cvd" customClass="DetectarTextoTextField" customModule="examenEvaluacionIOS" customModuleProvider="target">
                                 <rect key="frame" x="40" y="248" width="295" height="40"/>
@@ -83,7 +83,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inicia sesión con:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="355-gy-gN4">
                                 <rect key="frame" x="114" y="335" width="147.5" height="27.5"/>
@@ -107,9 +107,23 @@
                                     <constraint firstAttribute="height" constant="50" id="tgI-J8-XUe"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hgb-fH-qj8">
+                                <rect key="frame" x="40" y="442.5" width="295" height="50"/>
+                                <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Qux-az-XZz"/>
+                                </constraints>
+                                <state key="normal" title="Iniciar Sesion">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="iniciarSesionBtnAccion:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qb6-je-KRZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Hgb-fH-qj8" secondAttribute="trailing" constant="40" id="1qg-pa-EPF"/>
                             <constraint firstItem="CTn-9o-tOd" firstAttribute="top" secondItem="oaN-g6-BFU" secondAttribute="bottom" constant="30" id="65O-EA-5gS"/>
                             <constraint firstItem="oaN-g6-BFU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="6zU-P1-AnW"/>
                             <constraint firstItem="6rk-hq-Cvd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="AxD-mK-CgS"/>
@@ -125,10 +139,12 @@
                             <constraint firstItem="eg4-JT-vSE" firstAttribute="top" secondItem="CTn-9o-tOd" secondAttribute="bottom" constant="20" id="SnL-By-bJA"/>
                             <constraint firstItem="CTn-9o-tOd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TrM-cD-4Zs"/>
                             <constraint firstItem="355-gy-gN4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TsK-ud-wwD"/>
+                            <constraint firstItem="Hgb-fH-qj8" firstAttribute="top" secondItem="RHf-im-Oij" secondAttribute="bottom" constant="20" id="Y4U-Wl-cmX"/>
                             <constraint firstItem="Xze-Vl-iwc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Yfo-JM-7GV"/>
                             <constraint firstItem="3Jv-G5-fZL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZQ8-Zj-Oxh"/>
                             <constraint firstItem="6rk-hq-Cvd" firstAttribute="top" secondItem="Xze-Vl-iwc" secondAttribute="bottom" constant="20" id="gqJ-Yr-K24"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="da5-zf-43K" secondAttribute="bottom" constant="30" id="hRY-D0-f54"/>
+                            <constraint firstItem="Hgb-fH-qj8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="hYt-bs-Tvu"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="da5-zf-43K" secondAttribute="trailing" constant="30" id="iBP-yh-kdc"/>
                             <constraint firstItem="eg4-JT-vSE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="l2Y-Ni-t0Y"/>
                             <constraint firstItem="3Jv-G5-fZL" firstAttribute="width" secondItem="6rk-hq-Cvd" secondAttribute="width" id="oAR-Th-aPX"/>
@@ -377,7 +393,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="nKO-b3-J8s">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="wi1-2O-KWJ" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="InicioVC" automaticallyAdjustsScrollViewInsets="NO" id="wi1-2O-KWJ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="CsM-ga-ugp"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Jnw-S1-5eq">
