@@ -57,11 +57,12 @@ class LoginVC: UIViewController, UIGestureRecognizerDelegate, GIDSignInUIDelegat
                     let inicioVC = self.storyboard?.instantiateViewController(withIdentifier: "InicioVC")
                     self.present(inicioVC!, animated: true, completion: nil)
                 } else {
-                    alertaCargando.dismiss(animated: true, completion: nil)
-                    self.mostrarAlerta(paraTitulo: "Error", paraString: (loginError?.localizedDescription)!)
-                    print(String(describing: loginError?.localizedDescription))
-                    self.correoTxt.text = ""
-                    self.contraTxt.text = ""
+                    alertaCargando.dismiss(animated: true, completion: {
+                        self.mostrarAlerta(paraTitulo: "Error", paraString: (loginError?.localizedDescription)!)
+                        print(String(describing: loginError?.localizedDescription))
+                        self.correoTxt.text = ""
+                        self.contraTxt.text = ""
+                    })
                 }
             }
         }

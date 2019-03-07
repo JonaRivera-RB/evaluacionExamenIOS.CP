@@ -47,7 +47,7 @@ class PerfilVC: UIViewController {
             print(error.localizedDescription)
         }
         
-        
+       //traer datos del usuario para agregar 
     }
     @IBAction func cerrarSesionBtnAccion(_ sender: Any) {
         

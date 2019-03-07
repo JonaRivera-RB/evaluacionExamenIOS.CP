@@ -20,6 +20,11 @@
 		13DA1417222F5EF800C94CC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13DA1416222F5EF800C94CC4 /* Assets.xcassets */; };
 		13DA141A222F5EF800C94CC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13DA1418222F5EF800C94CC4 /* LaunchScreen.storyboard */; };
 		13DA1429222F67A100C94CC4 /* DetectarTextoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DA1428222F67A100C94CC4 /* DetectarTextoTextField.swift */; };
+		13E233B622316995007859C8 /* VistaSombreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E233B522316995007859C8 /* VistaSombreView.swift */; };
+		13E233B822316AE3007859C8 /* MisUbicacionesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E233B722316AE3007859C8 /* MisUbicacionesCell.swift */; };
+		13E233BA22316B59007859C8 /* DatosMisUbicaciones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E233B922316B59007859C8 /* DatosMisUbicaciones.swift */; };
+		13E233BC22316C7E007859C8 /* Ubicaciones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E233BB22316C7E007859C8 /* Ubicaciones.swift */; };
+		13E233BE223171BB007859C8 /* AgregarUbicacionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E233BD223171BB007859C8 /* AgregarUbicacionVC.swift */; };
 		13EDDED2223028950032DE01 /* RegistroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EDDED1223028950032DE01 /* RegistroVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +43,11 @@
 		13DA1419222F5EF800C94CC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		13DA141B222F5EF800C94CC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13DA1428222F67A100C94CC4 /* DetectarTextoTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectarTextoTextField.swift; sourceTree = "<group>"; };
+		13E233B522316995007859C8 /* VistaSombreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaSombreView.swift; sourceTree = "<group>"; };
+		13E233B722316AE3007859C8 /* MisUbicacionesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MisUbicacionesCell.swift; sourceTree = "<group>"; };
+		13E233B922316B59007859C8 /* DatosMisUbicaciones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatosMisUbicaciones.swift; sourceTree = "<group>"; };
+		13E233BB22316C7E007859C8 /* Ubicaciones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ubicaciones.swift; sourceTree = "<group>"; };
+		13E233BD223171BB007859C8 /* AgregarUbicacionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgregarUbicacionVC.swift; sourceTree = "<group>"; };
 		13EDDED1223028950032DE01 /* RegistroVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistroVC.swift; sourceTree = "<group>"; };
 		1646A78F39F70DEC3743B509 /* Pods-examenEvaluacionIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-examenEvaluacionIOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-examenEvaluacionIOS/Pods-examenEvaluacionIOS.debug.xcconfig"; sourceTree = "<group>"; };
 		6F600742F36013E079F383F0 /* Pods-examenEvaluacionIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-examenEvaluacionIOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-examenEvaluacionIOS/Pods-examenEvaluacionIOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -108,6 +118,7 @@
 				13EDDED1223028950032DE01 /* RegistroVC.swift */,
 				13B317802230AFF0006FE428 /* visitasVC.swift */,
 				13B317822230B005006FE428 /* PerfilVC.swift */,
+				13E233BD223171BB007859C8 /* AgregarUbicacionVC.swift */,
 			);
 			path = Controlladores;
 			sourceTree = "<group>";
@@ -116,6 +127,8 @@
 			isa = PBXGroup;
 			children = (
 				13B317842230B19F006FE428 /* MisDatos.swift */,
+				13E233B922316B59007859C8 /* DatosMisUbicaciones.swift */,
+				13E233BB22316C7E007859C8 /* Ubicaciones.swift */,
 			);
 			path = Modelos;
 			sourceTree = "<group>";
@@ -124,6 +137,8 @@
 			isa = PBXGroup;
 			children = (
 				13DA1428222F67A100C94CC4 /* DetectarTextoTextField.swift */,
+				13E233B522316995007859C8 /* VistaSombreView.swift */,
+				13E233B722316AE3007859C8 /* MisUbicacionesCell.swift */,
 			);
 			path = Vistas;
 			sourceTree = "<group>";
@@ -257,6 +272,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -267,6 +283,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -305,13 +322,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				13DA1412222F5EF600C94CC4 /* LoginVC.swift in Sources */,
+				13E233BA22316B59007859C8 /* DatosMisUbicaciones.swift in Sources */,
+				13E233B822316AE3007859C8 /* MisUbicacionesCell.swift in Sources */,
 				13B317812230AFF0006FE428 /* visitasVC.swift in Sources */,
 				1328D65E222F7FFE0049B72E /* Servicios.swift in Sources */,
 				131BCD02222F8A95005BB6D8 /* LoginServicio.swift in Sources */,
+				13E233BC22316C7E007859C8 /* Ubicaciones.swift in Sources */,
 				13B317832230B005006FE428 /* PerfilVC.swift in Sources */,
 				13B317852230B19F006FE428 /* MisDatos.swift in Sources */,
 				13EDDED2223028950032DE01 /* RegistroVC.swift in Sources */,
 				13DA1410222F5EF600C94CC4 /* AppDelegate.swift in Sources */,
+				13E233B622316995007859C8 /* VistaSombreView.swift in Sources */,
+				13E233BE223171BB007859C8 /* AgregarUbicacionVC.swift in Sources */,
 				13DA1429222F67A100C94CC4 /* DetectarTextoTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

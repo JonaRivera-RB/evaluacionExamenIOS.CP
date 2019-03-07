@@ -32,4 +32,9 @@ class Servicios {
         REF_USUARIOS.child(uid).updateChildValues(datosUsuario)
     }
     
+    func crearUbicacion(uid:String,datosUbicacion:Dictionary<String, Any>)
+    {
+        _REF_UBICACIONES.child(uid).updateChildValues(datosUbicacion)
+    }
+    
 }
