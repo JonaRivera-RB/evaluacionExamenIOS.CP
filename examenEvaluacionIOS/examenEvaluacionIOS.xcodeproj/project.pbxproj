@@ -8,23 +8,31 @@
 
 /* Begin PBXBuildFile section */
 		0708DEFB33F1C9C53543D1DF /* Pods_examenEvaluacionIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9C5C274C87F62B483704D36 /* Pods_examenEvaluacionIOS.framework */; };
+		131BCD02222F8A95005BB6D8 /* LoginServicio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131BCD01222F8A95005BB6D8 /* LoginServicio.swift */; };
+		1328D65E222F7FFE0049B72E /* Servicios.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1328D65D222F7FFE0049B72E /* Servicios.swift */; };
+		1372432C22307B1300F18768 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1372432B22307B1300F18768 /* GoogleService-Info.plist */; };
 		13DA1410222F5EF600C94CC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DA140F222F5EF600C94CC4 /* AppDelegate.swift */; };
-		13DA1412222F5EF600C94CC4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DA1411222F5EF600C94CC4 /* ViewController.swift */; };
+		13DA1412222F5EF600C94CC4 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DA1411222F5EF600C94CC4 /* LoginVC.swift */; };
 		13DA1415222F5EF600C94CC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13DA1413222F5EF600C94CC4 /* Main.storyboard */; };
 		13DA1417222F5EF800C94CC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13DA1416222F5EF800C94CC4 /* Assets.xcassets */; };
 		13DA141A222F5EF800C94CC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13DA1418222F5EF800C94CC4 /* LaunchScreen.storyboard */; };
 		13DA1429222F67A100C94CC4 /* DetectarTextoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DA1428222F67A100C94CC4 /* DetectarTextoTextField.swift */; };
+		13EDDED2223028950032DE01 /* RegistroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EDDED1223028950032DE01 /* RegistroVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		131BCD01222F8A95005BB6D8 /* LoginServicio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginServicio.swift; sourceTree = "<group>"; };
+		1328D65D222F7FFE0049B72E /* Servicios.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Servicios.swift; sourceTree = "<group>"; };
+		1372432B22307B1300F18768 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		13DA140C222F5EF600C94CC4 /* examenEvaluacionIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = examenEvaluacionIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13DA140F222F5EF600C94CC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		13DA1411222F5EF600C94CC4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		13DA1411222F5EF600C94CC4 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		13DA1414222F5EF600C94CC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		13DA1416222F5EF800C94CC4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		13DA1419222F5EF800C94CC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		13DA141B222F5EF800C94CC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13DA1428222F67A100C94CC4 /* DetectarTextoTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectarTextoTextField.swift; sourceTree = "<group>"; };
+		13EDDED1223028950032DE01 /* RegistroVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistroVC.swift; sourceTree = "<group>"; };
 		1646A78F39F70DEC3743B509 /* Pods-examenEvaluacionIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-examenEvaluacionIOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-examenEvaluacionIOS/Pods-examenEvaluacionIOS.debug.xcconfig"; sourceTree = "<group>"; };
 		6F600742F36013E079F383F0 /* Pods-examenEvaluacionIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-examenEvaluacionIOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-examenEvaluacionIOS/Pods-examenEvaluacionIOS.release.xcconfig"; sourceTree = "<group>"; };
 		A9C5C274C87F62B483704D36 /* Pods_examenEvaluacionIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_examenEvaluacionIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,6 +50,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1328D65C222F7FEB0049B72E /* ServiciosWeb */ = {
+			isa = PBXGroup;
+			children = (
+				1328D65D222F7FFE0049B72E /* Servicios.swift */,
+				131BCD01222F8A95005BB6D8 /* LoginServicio.swift */,
+			);
+			path = ServiciosWeb;
+			sourceTree = "<group>";
+		};
 		13DA1403222F5EF600C94CC4 = {
 			isa = PBXGroup;
 			children = (
@@ -63,6 +80,7 @@
 		13DA140E222F5EF600C94CC4 /* examenEvaluacionIOS */ = {
 			isa = PBXGroup;
 			children = (
+				1328D65C222F7FEB0049B72E /* ServiciosWeb */,
 				13DA1427222F623100C94CC4 /* Recursos */,
 				13DA1426222F622D00C94CC4 /* Vistas */,
 				13DA1425222F622700C94CC4 /* Modelos */,
@@ -72,6 +90,7 @@
 				13DA1416222F5EF800C94CC4 /* Assets.xcassets */,
 				13DA1418222F5EF800C94CC4 /* LaunchScreen.storyboard */,
 				13DA141B222F5EF800C94CC4 /* Info.plist */,
+				1372432B22307B1300F18768 /* GoogleService-Info.plist */,
 			);
 			path = examenEvaluacionIOS;
 			sourceTree = "<group>";
@@ -79,7 +98,8 @@
 		13DA1424222F621800C94CC4 /* Controlladores */ = {
 			isa = PBXGroup;
 			children = (
-				13DA1411222F5EF600C94CC4 /* ViewController.swift */,
+				13DA1411222F5EF600C94CC4 /* LoginVC.swift */,
+				13EDDED1223028950032DE01 /* RegistroVC.swift */,
 			);
 			path = Controlladores;
 			sourceTree = "<group>";
@@ -185,6 +205,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13DA141A222F5EF800C94CC4 /* LaunchScreen.storyboard in Resources */,
+				1372432C22307B1300F18768 /* GoogleService-Info.plist in Resources */,
 				13DA1417222F5EF800C94CC4 /* Assets.xcassets in Resources */,
 				13DA1415222F5EF600C94CC4 /* Main.storyboard in Resources */,
 			);
@@ -274,7 +295,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13DA1412222F5EF600C94CC4 /* ViewController.swift in Sources */,
+				13DA1412222F5EF600C94CC4 /* LoginVC.swift in Sources */,
+				1328D65E222F7FFE0049B72E /* Servicios.swift in Sources */,
+				131BCD02222F8A95005BB6D8 /* LoginServicio.swift in Sources */,
+				13EDDED2223028950032DE01 /* RegistroVC.swift in Sources */,
 				13DA1410222F5EF600C94CC4 /* AppDelegate.swift in Sources */,
 				13DA1429222F67A100C94CC4 /* DetectarTextoTextField.swift in Sources */,
 			);
