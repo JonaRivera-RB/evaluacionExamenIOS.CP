@@ -11,13 +11,13 @@ import UIKit
 class MisUbicacionesCell: UITableViewCell {
 
     @IBOutlet weak var nombreLugar:UILabel!
-    //@IBOutlet weak var descripcionLugar:UILabel!
+    @IBOutlet weak var descripcionLugar:UILabel!
     @IBOutlet weak var domicilioLugar:UILabel!
     
     func actualizarVista(datosUbicaciones:Ubicaciones){
-        nombreLugar.text = datosUbicaciones.nombre
-     //   descripcionLugar.text = datosUbicaciones.descripcion
-        domicilioLugar.text = datosUbicaciones.direccion
+        nombreLugar.text = "Nombre: "+datosUbicaciones.nombre
+        descripcionLugar.text = "Descripción: "+datosUbicaciones.descripcion
+        domicilioLugar.text = "Dirección: "+datosUbicaciones.direccion
     }
 
 }

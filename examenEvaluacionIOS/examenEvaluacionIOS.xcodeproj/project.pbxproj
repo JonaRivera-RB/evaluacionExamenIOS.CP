@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0708DEFB33F1C9C53543D1DF /* Pods_examenEvaluacionIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9C5C274C87F62B483704D36 /* Pods_examenEvaluacionIOS.framework */; };
+		130A08032231C93200B9386E /* SoltarPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130A08022231C93200B9386E /* SoltarPin.swift */; };
 		131BCD02222F8A95005BB6D8 /* LoginServicio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131BCD01222F8A95005BB6D8 /* LoginServicio.swift */; };
 		1328D65E222F7FFE0049B72E /* Servicios.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1328D65D222F7FFE0049B72E /* Servicios.swift */; };
 		1372432C22307B1300F18768 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1372432B22307B1300F18768 /* GoogleService-Info.plist */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		130A08022231C93200B9386E /* SoltarPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoltarPin.swift; sourceTree = "<group>"; };
 		131BCD01222F8A95005BB6D8 /* LoginServicio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginServicio.swift; sourceTree = "<group>"; };
 		1328D65D222F7FFE0049B72E /* Servicios.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Servicios.swift; sourceTree = "<group>"; };
 		1372432B22307B1300F18768 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -66,6 +68,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		130A08012231C90D00B9386E /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				130A08022231C93200B9386E /* SoltarPin.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		1328D65C222F7FEB0049B72E /* ServiciosWeb */ = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +106,7 @@
 		13DA140E222F5EF600C94CC4 /* examenEvaluacionIOS */ = {
 			isa = PBXGroup;
 			children = (
+				130A08012231C90D00B9386E /* Classes */,
 				1328D65C222F7FEB0049B72E /* ServiciosWeb */,
 				13DA1427222F623100C94CC4 /* Recursos */,
 				13DA1426222F622D00C94CC4 /* Vistas */,
@@ -330,6 +341,7 @@
 				13E233BC22316C7E007859C8 /* Ubicaciones.swift in Sources */,
 				13B317832230B005006FE428 /* PerfilVC.swift in Sources */,
 				13B317852230B19F006FE428 /* MisDatos.swift in Sources */,
+				130A08032231C93200B9386E /* SoltarPin.swift in Sources */,
 				13EDDED2223028950032DE01 /* RegistroVC.swift in Sources */,
 				13DA1410222F5EF600C94CC4 /* AppDelegate.swift in Sources */,
 				13E233B622316995007859C8 /* VistaSombreView.swift in Sources */,

@@ -12,10 +12,10 @@ struct Ubicaciones {
     private (set) var nombre:String
     private(set) var direccion:String
     private(set) var descripcion:String
-    private(set) var latitud:String
-    private(set) var longitud:String
+    private(set) var latitud:Double
+    private(set) var longitud:Double
     
-    init(nombre:String,direccion:String,descripcion:String,latitud:String,longitud:String) {
+    init(nombre:String,direccion:String,descripcion:String,latitud:Double,longitud:Double) {
         self.nombre = nombre
         self.direccion = direccion
         self.descripcion = descripcion

@@ -26,7 +26,7 @@ class visitasVC: UIViewController  {
         super.viewDidLoad()
         
         userID = Auth.auth().currentUser?.uid
-        print(userID)
+        
         tablaUbicaciones.delegate = self
         tablaUbicaciones.dataSource = self
         
@@ -46,8 +46,8 @@ class visitasVC: UIViewController  {
                     let nombre = valores["nombre"] as! String
                     let direccion = valores["direccion"] as! String
                     let descripcion = valores["descripcion"] as! String
-                    let latitud = valores["latitud"] as! String
-                    let longitud = valores["longitud"] as! String
+                    let latitud = valores["latitud"] as! Double
+                    let longitud = valores["longitud"] as! Double
                     let idUsuario = valores["idUsuario"] as! String
                     
                     
@@ -82,9 +82,6 @@ class visitasVC: UIViewController  {
     
     
 }
-  //validar datos
-//validad salida
-//configurar mapa para guardar ubicaciont
 
 extension visitasVC :  UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
