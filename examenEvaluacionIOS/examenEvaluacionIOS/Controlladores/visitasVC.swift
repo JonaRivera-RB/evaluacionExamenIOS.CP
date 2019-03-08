@@ -49,12 +49,13 @@ class visitasVC: UIViewController  {
                     let latitud = valores["latitud"] as! Double
                     let longitud = valores["longitud"] as! Double
                     let idUsuario = valores["idUsuario"] as! String
+                    let id = valores["id"] as! String
                     
                     
                     // let valoracion = valores["valoracion"] as! String
                     if self.userID != nil {
                         if idUsuario == self.userID as! String {
-                            let ubicaciones = Ubicaciones(nombre: nombre, direccion: direccion, descripcion: descripcion, latitud: latitud, longitud: longitud)
+                            let ubicaciones = Ubicaciones(nombre: nombre, direccion: direccion, descripcion: descripcion, latitud: latitud, longitud: longitud, id: id)
                             self.listaUbicaciones.append(ubicaciones)
                         }
                     }
@@ -94,6 +95,22 @@ extension visitasVC :  UITableViewDelegate, UITableViewDataSource {
         cell?.actualizarVista(datosUbicaciones: ubicacion)
         return cell!
 }
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+       
+        let ubcacion = self.listaUbicaciones[indexPath.row]
+        
+        Servicios.instancia.REF_UBICACIONES.child(ubcacion.id).removeValue { (error, ref) in
+            if error != nil {
+                print("fallo la eliminacion",error)
+                return
+            }
+            self.listaUbicaciones.remove(at: indexPath.row)
+            
+        }
+    }
 }
 
 
