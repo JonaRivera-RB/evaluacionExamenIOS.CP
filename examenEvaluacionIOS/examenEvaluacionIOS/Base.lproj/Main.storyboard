@@ -399,28 +399,36 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BiV-KH-afc" customClass="VistaSombreView" customModule="examenEvaluacionIOS" customModuleProvider="target">
                                                     <rect key="frame" x="10" y="5" width="355" height="108.66666666666667"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bMJ-1p-H82">
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="bMJ-1p-H82">
                                                             <rect key="frame" x="10" y="10" width="335" height="88.666666666666671"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mi casa" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jxn-2c-1VA">
-                                                                    <rect key="frame" x="138.33333333333334" y="0.0" width="58.333333333333343" height="23"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="335" height="26.333333333333332"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xwh-2A-6l3">
-                                                                    <rect key="frame" x="146.66666666666666" y="33" width="41.666666666666657" height="22.666666666666671"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xwh-2A-6l3">
+                                                                    <rect key="frame" x="0.0" y="31.333333333333336" width="335" height="26"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="rio bravo 2 colonia indeco" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RGe-EK-i9z">
-                                                                    <rect key="frame" x="69.333333333333329" y="65.666666666666671" width="196.33333333333337" height="23"/>
+                                                                    <rect key="frame" x="0.0" y="62.333333333333336" width="335" height="26.333333333333336"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
+                                                            <constraints>
+                                                                <constraint firstAttribute="trailing" secondItem="xwh-2A-6l3" secondAttribute="trailing" id="74Y-Ss-z3t"/>
+                                                                <constraint firstItem="RGe-EK-i9z" firstAttribute="leading" secondItem="bMJ-1p-H82" secondAttribute="leading" id="8dJ-29-icG"/>
+                                                                <constraint firstItem="xwh-2A-6l3" firstAttribute="leading" secondItem="bMJ-1p-H82" secondAttribute="leading" id="8kO-Nf-AKX"/>
+                                                                <constraint firstAttribute="trailing" secondItem="RGe-EK-i9z" secondAttribute="trailing" id="8ye-Ya-prs"/>
+                                                                <constraint firstItem="jxn-2c-1VA" firstAttribute="leading" secondItem="bMJ-1p-H82" secondAttribute="leading" id="GNu-qx-j80"/>
+                                                                <constraint firstAttribute="trailing" secondItem="jxn-2c-1VA" secondAttribute="trailing" id="HEf-D7-eaa"/>
+                                                            </constraints>
                                                         </stackView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
