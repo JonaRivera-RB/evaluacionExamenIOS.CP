@@ -15,6 +15,7 @@ class EditarUbicacionVC: UIViewController,UIGestureRecognizerDelegate {
     @IBOutlet weak var nombreTxt: DetectarTextoTextField!
     @IBOutlet weak var direccionTxt: DetectarTextoTextField!
     @IBOutlet weak var comentarioTxt: DetectarTextoTextField!
+    @IBOutlet weak var nombreUbicacion: UILabel!
     
     var nombre:String!
     var direccion:String!
@@ -23,6 +24,8 @@ class EditarUbicacionVC: UIViewController,UIGestureRecognizerDelegate {
     var longitud:Double!
     let radiosRegion: Double = 2000
     var idUbicacion:String!
+    var nombreUbicacionString:String!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +33,8 @@ class EditarUbicacionVC: UIViewController,UIGestureRecognizerDelegate {
         nombreTxt.text = nombre
         direccionTxt.text = direccion
         comentarioTxt.text = descripcion
+        nombreUbicacion.text = nombreUbicacionString
+        
         centrarUbicacionUsuarioMapa(position: CLLocationCoordinate2D(latitude: latitud, longitude: longitud))
         
         dobleTap()
@@ -48,11 +53,14 @@ class EditarUbicacionVC: UIViewController,UIGestureRecognizerDelegate {
         self.latitud = ubicacion.latitud
         self.longitud = ubicacion.longitud
         self.idUbicacion = ubicacion.id
+        self.nombreUbicacionString = ubicacion.nombre
+        
     }
     
     @IBAction func salirBtnAccion(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    
     @IBAction func actualizarBtnAccion(_ sender: Any) {
         
         let nuevaUBicacion = ["nombre":nombreTxt.text!,

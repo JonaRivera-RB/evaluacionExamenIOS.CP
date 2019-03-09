@@ -26,7 +26,6 @@
 		13DA1429222F67A100C94CC4 /* DetectarTextoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DA1428222F67A100C94CC4 /* DetectarTextoTextField.swift */; };
 		13E233B622316995007859C8 /* VistaSombreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E233B522316995007859C8 /* VistaSombreView.swift */; };
 		13E233B822316AE3007859C8 /* MisUbicacionesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E233B722316AE3007859C8 /* MisUbicacionesCell.swift */; };
-		13E233BA22316B59007859C8 /* DatosMisUbicaciones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E233B922316B59007859C8 /* DatosMisUbicaciones.swift */; };
 		13E233BC22316C7E007859C8 /* Ubicaciones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E233BB22316C7E007859C8 /* Ubicaciones.swift */; };
 		13E233BE223171BB007859C8 /* AgregarUbicacionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E233BD223171BB007859C8 /* AgregarUbicacionVC.swift */; };
 		13EDDED2223028950032DE01 /* RegistroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EDDED1223028950032DE01 /* RegistroVC.swift */; };
@@ -53,7 +52,6 @@
 		13DA1428222F67A100C94CC4 /* DetectarTextoTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectarTextoTextField.swift; sourceTree = "<group>"; };
 		13E233B522316995007859C8 /* VistaSombreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaSombreView.swift; sourceTree = "<group>"; };
 		13E233B722316AE3007859C8 /* MisUbicacionesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MisUbicacionesCell.swift; sourceTree = "<group>"; };
-		13E233B922316B59007859C8 /* DatosMisUbicaciones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatosMisUbicaciones.swift; sourceTree = "<group>"; };
 		13E233BB22316C7E007859C8 /* Ubicaciones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ubicaciones.swift; sourceTree = "<group>"; };
 		13E233BD223171BB007859C8 /* AgregarUbicacionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgregarUbicacionVC.swift; sourceTree = "<group>"; };
 		13EDDED1223028950032DE01 /* RegistroVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistroVC.swift; sourceTree = "<group>"; };
@@ -146,7 +144,6 @@
 			isa = PBXGroup;
 			children = (
 				13B317842230B19F006FE428 /* MisDatos.swift */,
-				13E233B922316B59007859C8 /* DatosMisUbicaciones.swift */,
 				13E233BB22316C7E007859C8 /* Ubicaciones.swift */,
 				1397B21022322F5F0078F13C /* LugaresCerca.swift */,
 			);
@@ -345,7 +342,6 @@
 			files = (
 				13DA1412222F5EF600C94CC4 /* LoginVC.swift in Sources */,
 				1397B21122322F5F0078F13C /* LugaresCerca.swift in Sources */,
-				13E233BA22316B59007859C8 /* DatosMisUbicaciones.swift in Sources */,
 				13E233B822316AE3007859C8 /* MisUbicacionesCell.swift in Sources */,
 				13B317812230AFF0006FE428 /* visitasVC.swift in Sources */,
 				1328D65E222F7FFE0049B72E /* Servicios.swift in Sources */,

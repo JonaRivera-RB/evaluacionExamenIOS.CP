@@ -14,9 +14,11 @@ class InformacionUbicacion: UIViewController {
 
     @IBOutlet weak var mapa: MKMapView!
     @IBOutlet weak var tablaLuagres: UITableView!
+    @IBOutlet weak var nombreUbicaicon: UILabel!
     
     var latitud:Double!
     var longitud:Double!
+    var nombreUbicacion:String!
     
     
     
@@ -35,6 +37,7 @@ class InformacionUbicacion: UIViewController {
         mapa.showsScale = true
         mapa.showsPointsOfInterest = true
         mapa.showsUserLocation = true
+        nombreUbicaicon.text = nombreUbicacion
         
         centrarUbicacionUsuarioMapa(position: CLLocationCoordinate2D(latitude: self.latitud, longitude: self.longitud))
         obtenerLugaresCerca()
@@ -43,7 +46,7 @@ class InformacionUbicacion: UIViewController {
     func initCordenads(ubicacion:Ubicaciones){
         self.latitud = ubicacion.latitud
         self.longitud = ubicacion.longitud
-        
+        self.nombreUbicacion = ubicacion.nombre
         
     }
     
@@ -97,6 +100,9 @@ class InformacionUbicacion: UIViewController {
             }
         }
         homework.resume()
+    }
+    @IBAction func salirBtnAccion(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
 }
 extension InformacionUbicacion: UITableViewDelegate, UITableViewDataSource {
