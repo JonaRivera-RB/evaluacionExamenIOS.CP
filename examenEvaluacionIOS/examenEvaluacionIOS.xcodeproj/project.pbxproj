@@ -11,7 +11,10 @@
 		130A08032231C93200B9386E /* SoltarPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130A08022231C93200B9386E /* SoltarPin.swift */; };
 		131BCD02222F8A95005BB6D8 /* LoginServicio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131BCD01222F8A95005BB6D8 /* LoginServicio.swift */; };
 		1328D65E222F7FFE0049B72E /* Servicios.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1328D65D222F7FFE0049B72E /* Servicios.swift */; };
+		13408E952232F1680089A2E3 /* EditarUbicacionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13408E942232F1680089A2E3 /* EditarUbicacionVC.swift */; };
 		1372432C22307B1300F18768 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1372432B22307B1300F18768 /* GoogleService-Info.plist */; };
+		1397B20F22322C4E0078F13C /* InformacionUbicacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1397B20E22322C4E0078F13C /* InformacionUbicacion.swift */; };
+		1397B21122322F5F0078F13C /* LugaresCerca.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1397B21022322F5F0078F13C /* LugaresCerca.swift */; };
 		13B317812230AFF0006FE428 /* visitasVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B317802230AFF0006FE428 /* visitasVC.swift */; };
 		13B317832230B005006FE428 /* PerfilVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B317822230B005006FE428 /* PerfilVC.swift */; };
 		13B317852230B19F006FE428 /* MisDatos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B317842230B19F006FE428 /* MisDatos.swift */; };
@@ -33,7 +36,10 @@
 		130A08022231C93200B9386E /* SoltarPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoltarPin.swift; sourceTree = "<group>"; };
 		131BCD01222F8A95005BB6D8 /* LoginServicio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginServicio.swift; sourceTree = "<group>"; };
 		1328D65D222F7FFE0049B72E /* Servicios.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Servicios.swift; sourceTree = "<group>"; };
+		13408E942232F1680089A2E3 /* EditarUbicacionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarUbicacionVC.swift; sourceTree = "<group>"; };
 		1372432B22307B1300F18768 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1397B20E22322C4E0078F13C /* InformacionUbicacion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformacionUbicacion.swift; sourceTree = "<group>"; };
+		1397B21022322F5F0078F13C /* LugaresCerca.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LugaresCerca.swift; sourceTree = "<group>"; };
 		13B317802230AFF0006FE428 /* visitasVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = visitasVC.swift; sourceTree = "<group>"; };
 		13B317822230B005006FE428 /* PerfilVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilVC.swift; sourceTree = "<group>"; };
 		13B317842230B19F006FE428 /* MisDatos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MisDatos.swift; sourceTree = "<group>"; };
@@ -130,6 +136,8 @@
 				13B317802230AFF0006FE428 /* visitasVC.swift */,
 				13B317822230B005006FE428 /* PerfilVC.swift */,
 				13E233BD223171BB007859C8 /* AgregarUbicacionVC.swift */,
+				1397B20E22322C4E0078F13C /* InformacionUbicacion.swift */,
+				13408E942232F1680089A2E3 /* EditarUbicacionVC.swift */,
 			);
 			path = Controlladores;
 			sourceTree = "<group>";
@@ -140,6 +148,7 @@
 				13B317842230B19F006FE428 /* MisDatos.swift */,
 				13E233B922316B59007859C8 /* DatosMisUbicaciones.swift */,
 				13E233BB22316C7E007859C8 /* Ubicaciones.swift */,
+				1397B21022322F5F0078F13C /* LugaresCerca.swift */,
 			);
 			path = Modelos;
 			sourceTree = "<group>";
@@ -312,12 +321,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-examenEvaluacionIOS/Pods-examenEvaluacionIOS-resources.sh",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -333,16 +344,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				13DA1412222F5EF600C94CC4 /* LoginVC.swift in Sources */,
+				1397B21122322F5F0078F13C /* LugaresCerca.swift in Sources */,
 				13E233BA22316B59007859C8 /* DatosMisUbicaciones.swift in Sources */,
 				13E233B822316AE3007859C8 /* MisUbicacionesCell.swift in Sources */,
 				13B317812230AFF0006FE428 /* visitasVC.swift in Sources */,
 				1328D65E222F7FFE0049B72E /* Servicios.swift in Sources */,
 				131BCD02222F8A95005BB6D8 /* LoginServicio.swift in Sources */,
 				13E233BC22316C7E007859C8 /* Ubicaciones.swift in Sources */,
+				1397B20F22322C4E0078F13C /* InformacionUbicacion.swift in Sources */,
 				13B317832230B005006FE428 /* PerfilVC.swift in Sources */,
 				13B317852230B19F006FE428 /* MisDatos.swift in Sources */,
 				130A08032231C93200B9386E /* SoltarPin.swift in Sources */,
 				13EDDED2223028950032DE01 /* RegistroVC.swift in Sources */,
+				13408E952232F1680089A2E3 /* EditarUbicacionVC.swift in Sources */,
 				13DA1410222F5EF600C94CC4 /* AppDelegate.swift in Sources */,
 				13E233B622316995007859C8 /* VistaSombreView.swift in Sources */,
 				13E233BE223171BB007859C8 /* AgregarUbicacionVC.swift in Sources */,
