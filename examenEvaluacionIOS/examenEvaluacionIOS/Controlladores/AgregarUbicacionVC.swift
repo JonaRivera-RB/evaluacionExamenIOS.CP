@@ -193,6 +193,7 @@ extension AgregarUbicacionVC : MKMapViewDelegate {
         removePin()
         let annotation = SoltarPin(coordinate: coordinate, identifier: "drppablePin")
         mapa.addAnnotation(annotation)
+        self.obtenerDireccionConCordenadas(paraLatitud: coordinate.latitude, paraLongitud: coordinate.longitude)
         
     }
     
